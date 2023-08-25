@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.author           = { 'Maxim' => 'maxim\@appsflyer.com', 'Andrii' => 'andrii.h\@appsflyer.com' }
     s.requires_arc = true
     s.platform     = :ios, :tvos, :osx
-    s.source       = { :git => 'https://github.com/AppsFlyerSDK/AppsFlyerFramework.git', :tag => s.version.to_s }
+    s.source       = { :git => 'https://github.com/tqirgodoi/AppsFlyerFramework.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '9.0'
     s.tvos.deployment_target = '9.0'
@@ -25,11 +25,11 @@ Pod::Spec.new do |s|
     s.default_subspecs = 'Main'
 
     s.subspec 'Main' do |ss|
-       ss.ios.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.ios.vendored_frameworks = 'xcframework/full/AppsFlyerLib.xcframework'
 
-       ss.tvos.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.tvos.vendored_frameworks = 'xcframework/full/AppsFlyerLib.xcframework'
 
-       ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.osx.vendored_frameworks = 'xcframework/full/AppsFlyerLib.xcframework'
     end
 
     s.subspec 'Legacy' do |ss|
@@ -37,25 +37,25 @@ Pod::Spec.new do |s|
        ss.pod_target_xcconfig  = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e', 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64 arm64e'}
        ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e', 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64 arm64e'}
 
-       ss.ios.vendored_frameworks = 'binaries/ios/AppsFlyerLib.framework'
+       ss.ios.vendored_frameworks = 'ios/AppsFlyerLib.framework'
 
-       ss.tvos.vendored_frameworks = 'binaries/tv/AppsFlyerLib.framework'
+       ss.tvos.vendored_frameworks = 'tv/AppsFlyerLib.framework'
 
-       ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.osx.vendored_frameworks = 'xcframework/full/AppsFlyerLib.xcframework'
   end
   s.subspec 'Strict' do |ss|
-       ss.ios.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
+       ss.ios.vendored_frameworks = 'xcframework/strict/AppsFlyerLib.xcframework'
 
-       ss.tvos.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
+       ss.tvos.vendored_frameworks = 'xcframework/strict/AppsFlyerLib.xcframework'
 
-       ss.osx.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
+       ss.osx.vendored_frameworks = 'xcframework/strict/AppsFlyerLib.xcframework'
   end
 
   s.subspec 'Dynamic' do |ss|
-       ss.ios.vendored_frameworks = 'binaries/xcframework/dynamic/AppsFlyerLib.xcframework'
+       ss.ios.vendored_frameworks = 'xcframework/dynamic/AppsFlyerLib.xcframework'
 
-       ss.tvos.vendored_frameworks = 'binaries/xcframework/dynamic/AppsFlyerLib.xcframework'
+       ss.tvos.vendored_frameworks = 'xcframework/dynamic/AppsFlyerLib.xcframework'
        # Dynamic framework does not support pure OSX yet
-       ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.osx.vendored_frameworks = 'xcframework/full/AppsFlyerLib.xcframework'
   end
 end
